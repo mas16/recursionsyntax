@@ -15,3 +15,5 @@ by mas 10.2018
 ## Examples
 
 * An example plot for three different loop syntax styles is provided as "timing_comparison.png"
+
+![](timing_comparison.png)
