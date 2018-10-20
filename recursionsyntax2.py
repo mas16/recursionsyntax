@@ -34,11 +34,13 @@ RUNS = 50
 ###
 #Define different loop structures
 
-#Clunky loop structure
+#'Clunky' loop structure
 def clunky(test_list):
 
-    #This is a clunk loop commonly
-    #seen in academic coding
+    '''
+    This is a 'clunky' loop commonly
+    seen in academic coding
+    '''
     
     temp = []
     final = []
@@ -49,21 +51,26 @@ def clunky(test_list):
         temp = []
     return final
 
-#less clunky loop structure
+#'Less Clunky' loop structure
 def less_clunky(test_list):
 
-    #This loop is still a bit clunky
-    #but less clunky than the preceding one
+    '''
+    This loop is still a bit clunky
+    but 'less clunky' than the preceding one
+    '''
     
     final = []
     for x in range(len(test_list)):
         final.append([test_list[x]+1, test_list[x]+2])
     return final
 
-#pythonic loop structure
+#Pythonic loop structure
 def pythonic(test_list):
 
-    #This is a pythonic loop
+    '''
+    This is a pythonic loop
+    "one liner"
+    '''
     
     final = [[entry+1, entry+2] for entry in test_list]
     return final
@@ -73,7 +80,7 @@ def pythonic(test_list):
 
 #Repeat loops over and over to get measurable time
 #Default number of times is set to 1000
-def time_test(test_list, test_function, trials = 1000):
+def time_test(test_list, test_function, trials=1000):
     start = time.time()
     for trial in range(trials):
         new_test_list = test_function(test_list)
@@ -82,7 +89,7 @@ def time_test(test_list, test_function, trials = 1000):
 
 #Repeat time measure over and over to get statistics
 #This is done so an average and standard deviation can be computed
-def time_group(test_list, test_function, tests = 50):
+def time_group(test_list, test_function, tests=50):
 
     #Use a pythonic style loop to iterate time_test
     
@@ -90,26 +97,25 @@ def time_group(test_list, test_function, tests = 50):
     return times
 
 #Plot results as box+whiskers with beeswarm on top
-def plot(x_vars,y_vars):
-    ax = sns.boxplot(x_vars, y_vars, linewidth = 2.5)
-    ax = sns.swarmplot(x_vars, y_vars, color = '.25', size = 8)
+def plot(x_vars, y_vars):
+    ax = sns.boxplot(x_vars, y_vars, linewidth=2.5)
+    ax = sns.swarmplot(x_vars, y_vars, color='.25', size=8)
     ax.set_xticklabels(['Clunky', 'Less Clunky', 'Pythonic'])
-    plt.tick_params(axis = 'both', which = 'major', labelsize = 18)
-    plt.ylabel('Elapsed Time (s)', fontsize = 22)
+    plt.tick_params(axis='both', which='major', labelsize=18)
+    plt.ylabel('Elapsed Time (s)', fontsize=22)
     plt.show()
     return 0
         
-    
 #Main
-def main(dummy_list,runs):
+def main(dummy_list, runs):
 
     #List functions to test (functions are defined in global environment)
     all_functions = [clunky, less_clunky, pythonic]
     #Do the timing test
-    all_output = [time_group(dummy_list, function, runs) for function in all_functions]
+    out = [time_group(dummy_list,function,runs) for function in all_functions]
     
     #Flatten all_output for visualization (y-axis values)
-    y_vars = [entry for sublist in all_output for entry in sublist]
+    y_vars = [entry for sublist in out for entry in sublist]
 
     #Generate arbitrary indices (x-axis values) for visualization
     x_vars = [1]*runs + [2]*runs + [3]*runs
@@ -119,4 +125,4 @@ def main(dummy_list,runs):
     return 0
 
 if __name__ == '__main__':
-    main(DUMMY,RUNS)
+    main(DUMMY, RUNS)
