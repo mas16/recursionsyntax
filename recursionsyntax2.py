@@ -27,7 +27,8 @@ sns.set()
 #Define constants
 
 #Dummy list to do operations on
-DUMMY = range(1,100)
+#Use as list, not range object
+DUMMY = list(range(1,100))
 
 #Number of tests
 RUNS = 50
