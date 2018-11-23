@@ -22,4 +22,10 @@ by mas 10.2018
 
 * The "Pythonic" style (red) which utilizes list comprehension is nearly 2x faster than the "Clunky" style (blue) which utilizes temporary lists. 
 
+Python 2.7:
+
 ![](timing_comparison.png)
+
+* UPDATE: I ran the same script using Python 3.6. It is clear that the performance is greatly improved.
+
+![](timing_py3.png)
