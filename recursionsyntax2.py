@@ -111,12 +111,12 @@ def plot(x_vars, y_vars):
     ax.set_xticklabels(['Clunky', 'Less Clunky', 'Pythonic'])
     plt.tick_params(axis='both', which='major', labelsize=18)
     plt.ylabel('Elapsed Time (s)', fontsize=22)
+    plt.tight_layout()
     plt.show()
     return 0
         
-#Main
-def main(dummy_list, runs):
-    """Main function to execute everything."""
+def run(dummy_list, runs):
+    """Execute everything."""
     #List functions to test (functions are defined in global environment)
     all_functions = [clunky, less_clunky, pythonic]
     #Do the timing test
@@ -129,5 +129,8 @@ def main(dummy_list, runs):
     plot(x_vars, y_vars)
     return 0
 
+def main():
+    run(DUMMY, RUNS)
+
 if __name__ == '__main__':
-    main(DUMMY, RUNS)
+    main()
