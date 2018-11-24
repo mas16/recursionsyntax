@@ -28,4 +28,4 @@ Python 2.7:
 
 * UPDATE: I ran the same script using Python 3.6. It is clear that the performance is greatly improved.
 
-![](timing_py3.png))
+![](timing_py3.png)
