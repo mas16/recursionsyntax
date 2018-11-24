@@ -24,7 +24,7 @@ by mas 10.2018
 
 Python 2.7:
 
-![](timing_comparison.png)
+![](timing_py27.png)
 
 * UPDATE: I ran the same script using Python 3.6. It is clear that the performance is greatly improved.
 
