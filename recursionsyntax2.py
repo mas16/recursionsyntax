@@ -106,7 +106,8 @@ def plot(x_vars, y_vars):
     Box+Whisker Plot to show mean and stdv
     Beeswarm on top to show raw data
     """
-    ax = sns.boxplot(x_vars, y_vars, linewidth=2.5)
+    colors = ["b","g","r"]
+    ax = sns.boxplot(x_vars, y_vars, color=colors, linewidth=2.5)
     ax = sns.swarmplot(x_vars, y_vars, color='.25', size=8)
     ax.set_xticklabels(['Clunky', 'Less Clunky', 'Pythonic'])
     plt.tick_params(axis='both', which='major', labelsize=18)

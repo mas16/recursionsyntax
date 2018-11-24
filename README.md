@@ -18,9 +18,9 @@ by mas 10.2018
 
 * The plot shows 50 unique trials (shown as individual data points on the plot) using each style to execute a recursive list operation 1000 times. 
 
-* For clarity, the mean and standard deviation are shown as the color-coded box plots. 
+* For clarity, the mean and standard deviation are shown as box plots. 
 
-* The "Pythonic" style (red) which utilizes list comprehension is nearly 2x faster than the "Clunky" style (blue) which utilizes temporary lists. 
+* The "Pythonic" style which utilizes list comprehension is nearly 2x faster than the "Clunky" style  which utilizes temporary lists. 
 
 Python 2.7:
 
