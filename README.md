@@ -24,8 +24,8 @@ by mas 10.2018
 
 Python 2.7:
 
-![](timing_py27.png)
+![](timing_py27.png = 600x480)
 
 * UPDATE: I ran the same script using Python 3.6. It is clear that the performance is greatly improved.
 
-![](timing_py3.png)
+![](timing_py3.png = 600x480)
